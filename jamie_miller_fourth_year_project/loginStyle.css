@@ -1,0 +1,40 @@
+html, body {height: 100%;
+    width: 100%;
+    margin: 0;
+    /*background-color: dodgerblue;*/
+    background-image: url("glasgowEvening.jpg");    /* Image recieved from https://www.collegiate-ac.com/uk-student-accommodation/glasgow/ */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow: auto;
+}
+
+.container{
+    height:50%;
+    text-align: center;
+    margin-top: 50%;
+}
+.form_input{
+    width: 60%;
+    height: 50%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+#username, #password, #passwordConfirm{
+    margin: 2%;
+    width: 100%;
+}
+#registerLink{
+    background-color: ghostwhite;
+    width: 60%;
+    height: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
+    border-style: solid;
+
+}
+#submit, #ReturnToMenu, #register_btn{
+    width:30%;
+}
+
+

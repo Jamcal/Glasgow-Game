@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Glasgow Game</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href = "style.css"/>
+</head>
+
+<meta name = "mobile-web-app-capable" content = "yes" />
+<meta name = "apple-mobile-web-app-capable" content = "yes" />
+
+<body>
+<h1>Glasgow Game: Explore the city of Glasgow!</h1>
+<h2>  </h2>
+<div id="main">
+    <section class="playOptions" id="playPopup">
+        <p class="popupContent">
+            <p id="backButton1">
+                <img src="backButton.png" id="closeOptions" alt="Back" width = "32" height = "32" onclick="view.hideOptions()">
+                 <img src="login.png" id="login" alt="login" width = "32" height = "32" onclick="controller.goToLogin()">
+            </p>
+            <br>
+            <div id="div1">
+                <p id="gamemodeTitle">Game Mode: </p>
+                <select id="gameType">
+                    <option value="Basic">Basic</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <div id="div2">
+            <p id="roundsTitle">Number of rounds: </p>
+                <select id="rounds">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        <p id="startGame">
+        <input type="button" name="startButton" value="Start Game" class="startButton" id="Start" onclick="window.location.href = 'https://devweb2018.cis.strath.ac.uk/~njb15178/glasgow_game/gamescreen.php'+ '#' + model.getGameMode() + '#' + model.getRounds()" >
+        </p>
+    </section>
+
+    <section class="info" id="info">
+        <p class="popupInfo">
+        <p id="backButton2">
+            <img src="backButton.png" id="closeInfo" width = "32" height = "32" alt="Back" onclick="view.hideInfo()">
+        </p>
+        <p> Welcome to the Glasgow Game, a game that will hopefully encourage you to explore more of the great city of Glasgow!</p>
+        <p> You can choose how many rounds you want to play, and how intense you want the prompts to be.</p>
+        <p> Basic mode will have you walking around the center of Glasgow like you would any normal day, where as Advanced may ask you to go further out your way than you normally might!</p>
+        <p> Once you get into a game, you will see some values at the top of your screen:</p>
+        <p> Left: What round you're on <br>
+         Center: Your current objective. <br>
+         Right: Your score</p>
+        <P> Score is decided by how far away you are from your objective in meters. The lower your score, the better!</P>
+        <p> If there are no objectives within 1km when you submit, you will be given 1000 points and notified that you were too far away.</p>
+    </section>
+</div>
+
+<script>
+    var e = document.getElementById('gameType');
+    gamemode = e.options[e.selectedIndex].value;
+</script>
+
+
+
+<div id="buttonsIndex">
+    <input type="button" name="playButton" class = "menuButton" value="Play" id="PlayButton" onclick="view.showOptions()">
+    <input type="button" name="infoButton" class = "menuButton" value="Info" id="InfoButton" onclick="view.showInfo()">
+</div>
+
+<script src = "Model.js"></script>
+<script src = "View.js"></script>
+<script src = "Controller.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=API_KEY&libraries=places">
+</script>
+</body>
+</html>
